@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.csprojResolveAssemblyReference.cache
+=======
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.csprojResolveAssemblyReference.cache
+>>>>>>> 2babd29afcf60d21dc7270712d3f10f3f5476d22
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Admin\Report.xlsx
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.Tests.dll.config
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.Tests.dll
@@ -14,10 +18,17 @@ C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\De
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.FriendlyUrls.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Owin.dll
+<<<<<<< HEAD
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.dll
+=======
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+>>>>>>> 2babd29afcf60d21dc7270712d3f10f3f5476d22
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.pdb
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.xml
@@ -27,10 +38,17 @@ C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\De
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.FriendlyUrls.xml
+<<<<<<< HEAD
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.csprojResolveAssemblyReference.cache
+=======
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.xml
+C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+>>>>>>> 2babd29afcf60d21dc7270712d3f10f3f5476d22
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.pdb
