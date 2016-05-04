@@ -250,3 +250,9 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+*.suo
+eServe/.vs/eServe/v14/.suo
+*.cache
+*.suo
+*.dll
+eServe/eServeSU/obj/Debug/eServeSU.dll
