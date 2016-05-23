@@ -94,7 +94,7 @@ namespace eServeSU
                         h1CommunityPartnerView.Visible = true;
                         h1CommunityPartnerStudentView.Visible = true;
                        
-                        lblLogOut.Visible = true;
+                        //lblLogOut.Visible = true;
                         break;
                     case "Student@eServeSU.net":
                         hlStudentRegistered.Visible = true;
