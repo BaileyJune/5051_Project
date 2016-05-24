@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU\obj\Debug\eServeSU.csprojResolveAssemblyReference.cache
 C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU\bin\Admin\Report.xlsx
 C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU\bin\eServeSU.dll.config
@@ -111,9 +110,7 @@ C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU\bin\zh-Hans\System
 C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU\obj\Debug\eServeSU.dll
 C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU\obj\Debug\eServeSU.pdb
-=======
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU\obj\Debug\eServeSU.csprojResolveAssemblyReference.cache
->>>>>>> 2babd29afcf60d21dc7270712d3f10f3f5476d22
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU\bin\Admin\Report.xlsx
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU\bin\eServeSU.dll.config
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU\bin\eServeSU.dll
