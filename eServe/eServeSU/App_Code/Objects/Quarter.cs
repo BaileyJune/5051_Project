@@ -111,7 +111,7 @@ namespace eServeSU
 
         public List<Quarter> GetAllQuarters()
         {
-            var reader = dbHelper.GetFocusArea(Constant.SP_GetQuarter);
+            var reader = dbHelper.GetQuarter(Constant.SP_GetQuarter);
 
             List<Quarter> quarterList = new List<Quarter>();
             Quarter quarter = null;
@@ -121,11 +121,12 @@ namespace eServeSU
                     quarter = new Quarter();
                     quarter.QuarterId = Convert.ToInt32(reader["QuarterId"]);
                     quarter.QuarterName = reader["QuarterName"].ToString();
-                   // quarter.QuarterShortName = reader["QuarterShortName"].ToString();
+                    quarter.QuarterShortName = reader["ShortName"].ToString();
                     quarter.StartDate = Convert.ToDateTime(reader["StartDate"]);
                     quarter.EndDate = Convert.ToDateTime(reader["EndDate"]);
 
                     quarterList.Add(quarter);
+                
             }
 
             return quarterList;
