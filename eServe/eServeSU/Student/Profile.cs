@@ -77,7 +77,14 @@ namespace eServeSU
 
             Profile profile = new Profile();
             reader.Read();
-            profile.StudentID = reader["StudentID"].ToString();
+            try
+            {
+                profile.StudentID = reader["StudentID"].ToString();
+            }
+            catch
+            {
+                throw new InvalidOperationException();
+            }
             profile.FirstName = reader["FirstName"].ToString();
             profile.LastName = reader["LastName"].ToString();
             profile.PreferedName = reader["PreferedName"].ToString();
