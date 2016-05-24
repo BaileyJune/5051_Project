@@ -118,14 +118,14 @@ namespace eServeSU
 
             while (reader.Read())
             {
-                quarter = new Quarter();
-                quarter.QuarterId = Convert.ToInt32(reader["QuarterId"]);
-                quarter.QuarterName = reader["QuarterName"].ToString();
-                quarter.QuarterShortName = reader["QuarterShortName"].ToString();
-                quarter.StartDate = Convert.ToDateTime(reader["StartDate"]);
-                quarter.EndDate = Convert.ToDateTime(reader["EndDate"]);
+                    quarter = new Quarter();
+                    quarter.QuarterId = Convert.ToInt32(reader["QuarterId"]);
+                    quarter.QuarterName = reader["QuarterName"].ToString();
+                   // quarter.QuarterShortName = reader["QuarterShortName"].ToString();
+                    quarter.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                    quarter.EndDate = Convert.ToDateTime(reader["EndDate"]);
 
-                quarterList.Add(quarter);
+                    quarterList.Add(quarter);
             }
 
             return quarterList;
