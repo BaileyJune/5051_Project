@@ -13,7 +13,7 @@
         <div>
         <asp:Label ID="lblLegalName" runat="server" Text="Legal Name: "></asp:Label>
         <asp:Label ID="lblStudentLegalName" runat="server" Font-Bold="true" Text=""></asp:Label>
-        <%--<asp:TextBox ID="txtLegalName" runat="server"></asp:TextBox>--%>
+        <asp:TextBox ID="txtLegalName" runat="server"></asp:TextBox>
         <br /><br />
 
         <asp:Label ID="PreferredName" runat="server" Text="Preferred Name: "></asp:Label>        
@@ -22,14 +22,14 @@
 
         <asp:Label ID="lblDateOfBirth" runat="server" Text="Date of Birth: "></asp:Label>
         <asp:Label ID="lblStudentDOB" runat="server" Font-Bold="true" Text=""></asp:Label>
-        <%--<asp:TextBox ID="txtDateOfBirth" runat="server"></asp:TextBox>--%>
+        <asp:TextBox ID="txtDateOfBirth" runat="server"></asp:TextBox>
         <br /><br />
 
         <asp:Label ID="lblGender" runat="server" Text="Gender (optional): "></asp:Label>
         <asp:TextBox ID="txtGender" runat="server"></asp:TextBox>
         <br /><br />
 
-<%--        <asp:Label ID="lblEthinicity" runat="server" Text="Ethinicity: "></asp:Label>
+        <asp:Label ID="lblEthinicity" runat="server" Text="Ethinicity: "></asp:Label>
         <asp:CheckBoxList ID="cbxEthinicity" runat="server">
             <asp:ListItem>Hispanic or Latino</asp:ListItem>
             <asp:ListItem>American Indian or Alaska Native</asp:ListItem>
@@ -38,7 +38,7 @@
             <asp:ListItem>Native Hawaiian or Pacific Islander</asp:ListItem>
             <asp:ListItem>White</asp:ListItem>
         </asp:CheckBoxList>
-        <br /><br />--%>
+        <br /><br />
 
         <asp:Label ID="lblFocusAreas" runat="server" Text="I’m interested in opportunities related to: "></asp:Label>        
         <asp:CheckBoxList ID="cbxFocusAreas" runat="server">
