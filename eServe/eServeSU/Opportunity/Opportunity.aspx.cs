@@ -101,7 +101,7 @@ namespace eServeSU
             CommunityPartnersPeople ccp = new CommunityPartnersPeople();
 
             ddlSupervisor.DataSource = ccp.GetAllCommunityPartnerPeople();
-            ddlSupervisor.DataTextField = "Supervisor";
+            ddlSupervisor.DataTextField = "FirstName";
             ddlSupervisor.DataValueField = "CPPID";
             ddlSupervisor.DataBind();
         }

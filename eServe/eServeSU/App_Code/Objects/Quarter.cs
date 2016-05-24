@@ -22,7 +22,7 @@ namespace eServeSU
 
         private String quarterName;
         private int quarterId;
-        private String quarterShortName;
+        private String ShortName;
         private DateTime startDate;
         private DateTime endDate;
         private DatabaseHelper dbHelper;
@@ -89,14 +89,14 @@ namespace eServeSU
         }
         public String QuarterShortName
         {
-            get { return this.quarterShortName; }
+            get { return this.ShortName; }
             set
             {
                 try
                 {
-                    this.quarterShortName = value;
+                    this.ShortName = value;
 
-                    if (this.quarterShortName == "")
+                    if (this.ShortName == "")
                     {
                         throw new Exception(
                             "Please provide quarter short name ...");
@@ -121,9 +121,9 @@ namespace eServeSU
                     quarter = new Quarter();
                     quarter.QuarterId = Convert.ToInt32(reader["QuarterId"]);
                     quarter.QuarterName = reader["QuarterName"].ToString();
-                    quarter.QuarterShortName = reader["ShortName"].ToString();
-                    quarter.StartDate = Convert.ToDateTime(reader["StartDate"]);
-                    quarter.EndDate = Convert.ToDateTime(reader["EndDate"]);
+                 //   quarter.ShortName = reader["ShortName"].ToString();
+                   // quarter.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                   // quarter.EndDate = Convert.ToDateTime(reader["EndDate"]);
 
                     quarterList.Add(quarter);
                 
