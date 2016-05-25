@@ -82,33 +82,27 @@ namespace eServeSU
              var reader = dbHelper.GetCourseEvaluationByStudent(Constant.SP_GetCourseEvaluationByStudent);
              List<StudentCourseEvaluation> studentCourseEvalList = new List<StudentCourseEvaluation>();
              StudentCourseEvaluation courseEval = null;
-             try
-            {
-                while (reader.Read())
-                {
-                    courseEval = new StudentCourseEvaluation();
-                    courseEval.OpportunityID = Convert.ToInt32(reader["OpportunityID"]);
+          while (reader.Read())
+          {
+              courseEval = new StudentCourseEvaluation();
+              courseEval.OpportunityID = Convert.ToInt32(reader["OpportunityID"]);
 
-                    courseEval.StudentID = Convert.ToInt32(reader["StudentID"]);
+              courseEval.StudentID = Convert.ToInt32(reader["StudentID"]);
 
-                    courseEval.Name = reader["Name"].ToString();
+              courseEval.Name = reader["Name"].ToString();
 
-                    courseEval.FirstName = reader["FirstName"].ToString();
+              courseEval.FirstName = reader["FirstName"].ToString();
 
-                    courseEval.LastName = reader["LastName"].ToString();
+              courseEval.LastName = reader["LastName"].ToString();
 
-                    courseEval.SectionName = reader["SectionName"].ToString();
+              courseEval.SectionName = reader["SectionName"].ToString();
 
-                    studentCourseEvalList.Add(courseEval);
+              studentCourseEvalList.Add(courseEval);
 
-                }
-                reader.Close();
-                return studentCourseEvalList;
-            }
-            catch (NullReferenceException)
-            {
-                return null;
-            }
+
+          } 
+          reader.Close();
+          return studentCourseEvalList;
           
          }
 

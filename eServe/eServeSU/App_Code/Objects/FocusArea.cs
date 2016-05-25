@@ -69,22 +69,16 @@ namespace eServeSU
             List<FocusArea> focusAreaList = new List<FocusArea>();
             FocusArea focusArea = null;
 
-            try
+            while (reader.Read())
             {
-                while (reader.Read())
-                {
-                    focusArea = new FocusArea();
-                    focusArea.FocusAreaId = Convert.ToInt32(reader["FocusAreaId"]);
-                    focusArea.AreaName = reader["AreaName"].ToString();
+                focusArea = new FocusArea();
+                focusArea.FocusAreaId = Convert.ToInt32(reader["FocusAreaId"]);
+                focusArea.AreaName = reader["AreaName"].ToString();
 
-                    focusAreaList.Add(focusArea);
-                }
-
-                return focusAreaList;
-            } catch (NullReferenceException)
-            {
-                return null;
+                focusAreaList.Add(focusArea);
             }
+
+            return focusAreaList;
         }
 
         public void DeleteAllStudentFocusAreas(int studentId)
