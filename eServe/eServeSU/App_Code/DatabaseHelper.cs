@@ -151,6 +151,8 @@ namespace eServeSU
         
         public SqlDataReader GetOneOpportunityById(string queryString, int opportunityId)
         {
+            if (string.IsNullOrEmpty(dbConnection))
+                dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
             try
             {
                 var connection = new SqlConnection(dbConnection);
