@@ -133,7 +133,7 @@ namespace eServeSU
             {
                 fac = new Faculty();
                 fac.OrganizationName = reader["OrganizationName"].ToString();
-               /* fac.Question1 = reader["Answer1"].ToString();
+                fac.Question1 = reader["Answer1"].ToString();
                 fac.Question2 = reader["Answer2"].ToString();
                 fac.Question3 = reader["Answer3"].ToString();
                 fac.Question4 = reader["Answer4"].ToString();
@@ -142,7 +142,7 @@ namespace eServeSU
                 fac.Rate3 = reader["Rate3"].ToString();
                 fac.Rate4 = reader["Rate4"].ToString();
                 fac.Rate5 = reader["Rate5"].ToString();
-                fac.Rate6 = reader["Rate6"].ToString(); */
+                fac.Rate6 = reader["Rate6"].ToString();
                 fac.Comments = reader["Comments"].ToString();
             }
 
