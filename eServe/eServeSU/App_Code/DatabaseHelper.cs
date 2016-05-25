@@ -811,7 +811,7 @@ namespace eServeSU
 
             var connection = new SqlConnection(dbConnection);
             var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@ProfessorID", SqlDbType.Int).Value = professorID;
+            command.Parameters.Add("@profID", SqlDbType.Int).Value = professorID;
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 

@@ -31,6 +31,15 @@ namespace eServeSU {
         protected global::System.Web.UI.WebControls.Label lblStudentLegalName;
         
         /// <summary>
+        /// txtLegalName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLegalName;
+        
+        /// <summary>
         /// PreferredName control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace eServeSU {
         protected global::System.Web.UI.WebControls.Label lblStudentDOB;
         
         /// <summary>
+        /// txtDateOfBirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDateOfBirth;
+        
+        /// <summary>
         /// lblGender control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,24 @@ namespace eServeSU {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtGender;
+        
+        /// <summary>
+        /// lblEthinicity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEthinicity;
+        
+        /// <summary>
+        /// cbxEthinicity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList cbxEthinicity;
         
         /// <summary>
         /// lblFocusAreas control.

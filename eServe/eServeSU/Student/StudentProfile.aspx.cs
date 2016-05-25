@@ -38,8 +38,11 @@ namespace eServeSU
             lblStudentLegalName.Text = result.LastName + ", " + result.FirstName;
             txtPreferName.Text = result.PreferedName;
 
-            string[] dobSplit = result.DateOfBirth.Split(' ');
+            try {
+                string[] dobSplit = result.DateOfBirth.Split(' ');
             lblStudentDOB.Text = dobSplit[0];
+            }
+            catch (NullReferenceException) { }
 
             txtGender.Text = result.Gender;
 
@@ -53,28 +56,32 @@ namespace eServeSU
             //        } 
             //    }
             //}
-            for (int i = 0; i < cbxFocusAreas.Items.Count; i++)
+            try
             {
-                for (int j = 0; j < result.FocusAreas.Count; j++)
+                for (int i = 0; i < cbxFocusAreas.Items.Count; i++)
                 {
-                    if (cbxFocusAreas.Items[i].ToString() == result.FocusAreas[j].ToString())
+                    for (int j = 0; j < result.FocusAreas.Count; j++)
                     {
-                        cbxFocusAreas.Items[i].Selected = true;
+                        if (cbxFocusAreas.Items[i].ToString() == result.FocusAreas[j].ToString())
+                        {
+                            cbxFocusAreas.Items[i].Selected = true;
+                        }
                     }
                 }
-            }
 
-            if (result.InternationalStudent == "Yes")
-            {
-                rbtnInternationalStudent.Items[0].Selected = true;
-            }
-            else
-            {
-                rbtnInternationalStudent.Items[1].Selected = true;
-            }
+                if (result.InternationalStudent == "Yes")
+                {
+                    rbtnInternationalStudent.Items[0].Selected = true;
+                }
+                else
+                {
+                    rbtnInternationalStudent.Items[1].Selected = true;
+                }
 
-            string[] lastBackgroundCheckSplit = result.LastBackgroundCheck.Split(' ');
-            lblStudentLastBackgroundCheck.Text = lastBackgroundCheckSplit[0];
+                string[] lastBackgroundCheckSplit = result.LastBackgroundCheck.Split(' ');
+                lblStudentLastBackgroundCheck.Text = lastBackgroundCheckSplit[0];
+            }
+            catch (NullReferenceException) { }
         }
         protected void UpdateStudentProfile(object sender, EventArgs e)
         {

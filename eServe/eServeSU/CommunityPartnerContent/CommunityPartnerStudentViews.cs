@@ -203,8 +203,8 @@ namespace eServeSU
                 cpsv = new CommunityPartnerStudentViews();
 
                 cpsv.OpportunityID = Convert.ToInt32(reader["OpportunityID"]);
-                cpsv.CPPID = Convert.ToInt32(reader["CPPID"]);
-                cpsv.CPID = Convert.ToInt32(reader["CPID"]);
+               // cpsv.CPPID = Convert.ToInt32(reader["CPPID"]);
+               // cpsv.CPID = Convert.ToInt32(reader["CPID"]);
                 cpsv.Name = reader["Name"].ToString ();
                 cpsv.StudentID = Convert.ToInt32(reader["StudentID"]);
                 cpsv.FirstName = reader["FirstName"].ToString();
@@ -217,7 +217,7 @@ namespace eServeSU
                 cpsv.ProfessorLastName = reader["ProfessorLastName"].ToString  ();
                 cpsv.TotalHoursVolunteered = Convert .ToInt32 (reader["TotalHoursVolunteered"]);
                 cpsv.PartnerApprovedHours = Convert .ToInt32 (reader["PartnerApprovedHours"]);
-                cpsv.ProfessorEmail = reader["ProfessorEmail"].ToString();
+               // cpsv.ProfessorEmail = reader["ProfessorEmail"].ToString();
 
                 cpsvList.Add(cpsv);
 

@@ -88,13 +88,13 @@ namespace eServeSU
                 switch (Session["UserName"].ToString())
                 {
                     case "Partner@eServeSU.net":
-                        //hlOpp.Visible = true;
+                        hlOpp.Visible = true;
                         h1Opportunities.Visible = true;
                         h1ReadEvaluation.Visible = true;
                         h1CommunityPartnerView.Visible = true;
                         h1CommunityPartnerStudentView.Visible = true;
                        
-                        lblLogOut.Visible = true;
+                        //lblLogOut.Visible = true;
                         break;
                     case "Student@eServeSU.net":
                         hlStudentRegistered.Visible = true;

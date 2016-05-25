@@ -32,7 +32,7 @@ namespace eServeSU
                 //Eval.StudentID = 101946;
                 //Eval.OpportunityID = 9;
 
-                Eval.AutoPopulatePartnerEval();
+                Eval.AutoPopulatePartnerEval(Eval.CPID, Eval.CPPID, Eval.StudentID, Eval.OpportunityID);
                 tbOrgName.Text = Eval.OrganizationName;
                 tbSupervisorFirstName.Text = Eval.SupervisorFirstName;
                 tbSupervisorLastName.Text = Eval.SupervisorLastName;
