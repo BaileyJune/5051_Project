@@ -13,8 +13,8 @@ namespace eServeSU
         {
             if (!IsPostBack)
                 DataBind();
-            Session["OpportunityID"] = 11;
-            Session["StudentID"] = 106288;
+            Session["OpportunityID"] = 1;
+            Session["StudentID"] = 12;
         }
 
         public void DataBind()

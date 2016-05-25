@@ -28,7 +28,7 @@ namespace eServeSU
             //int StudentID = Convert.ToInt32(Session["StudentID"]);
             //int CPPID = Convert.ToInt32(Session["CPPID"]);
              StudentTimeEntry Ste = new StudentTimeEntry();
-             List<StudentTimeEntry> Lste = Ste.GetTimeEntries(101946,5);
+             List<StudentTimeEntry> Lste = Ste.GetTimeEntries(12,1);
              if (Lste.Count == 0)
              {
                  StudentTimeEntry TimeEntry = new StudentTimeEntry();
