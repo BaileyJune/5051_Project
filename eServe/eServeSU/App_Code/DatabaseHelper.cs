@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
@@ -178,14 +178,19 @@ namespace eServeSU
 
         public SqlDataReader GetFocusArea(string queryString)
         {
+            
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+                try {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
-
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetQuarter(string queryString)
         {
