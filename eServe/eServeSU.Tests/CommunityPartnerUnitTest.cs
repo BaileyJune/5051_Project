@@ -12,18 +12,18 @@ namespace eServeUnitTest
     public class CommunityPartnerUnitTest
     {
         public TestContext TestContext { get; set; }
-        public string ConnectionString = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
+            public string ConnectionString = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
 
         [TestMethod]
         [TestCategory("CommunityPartner")]
         [Description("")]
         public void Test_GetAllCommunityPartner()
         {
-            //Initialize SqlQueryHelper object
+            //Initialize SqlQueryHelper object  
             var sqlConnection = new SqlConnection(ConnectionString);
             sqlConnection.Open();
           
-            var command = new SqlCommand("select count(*) from CommunityPartner");
+            var command = new SqlCommand("select count(*) from CommunityPartners", sqlConnection);
             var cpCount = Convert.ToInt32(command.ExecuteScalar());
 
             //CommunityPartner
