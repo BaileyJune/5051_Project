@@ -163,12 +163,17 @@ namespace eServeSU
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
-
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
-
-            return command.ExecuteReader();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetFocusArea(string queryString)
