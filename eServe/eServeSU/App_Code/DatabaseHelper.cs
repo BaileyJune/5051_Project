@@ -471,14 +471,20 @@ namespace eServeSU
 
         public SqlDataReader GetCourseEvaluationByStudent(string queryString)
         {
-            if (string.IsNullOrEmpty(dbConnection))
-                dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+            try
+            {
+                if (string.IsNullOrEmpty(dbConnection))
+                    dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader DeleteAllStudentFocusAreas(string queryString, int studentId)
         {
