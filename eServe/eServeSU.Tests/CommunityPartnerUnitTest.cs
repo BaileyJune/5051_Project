@@ -12,7 +12,7 @@ namespace eServeUnitTest
     public class CommunityPartnerUnitTest
     {
         public TestContext TestContext { get; set; }
-            public string ConnectionString = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
+        public string ConnectionString = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
 
         [TestMethod]
         [TestCategory("CommunityPartner")]
