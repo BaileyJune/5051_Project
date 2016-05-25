@@ -68,17 +68,22 @@ namespace eServeSU
 
             List<OpportunityType> oppTypeList = new List<OpportunityType>();
             OpportunityType oppType = null;
-
-            while (reader.Read())
+            try
             {
-                oppType = new OpportunityType();
-                oppType.OpportunityTypeId = Convert.ToInt32(reader["OpportunityTypeId"]);
-                oppType.Name = reader["Name"].ToString();
+                while (reader.Read())
+                {
+                    oppType = new OpportunityType();
+                    oppType.OpportunityTypeId = Convert.ToInt32(reader["OpportunityTypeId"]);
+                    oppType.Name = reader["Name"].ToString();
 
-                oppTypeList.Add(oppType);
+                    oppTypeList.Add(oppType);
+                }
+
+                return oppTypeList;
+            } catch (NullReferenceException)
+            {
+                return null;
             }
-
-            return oppTypeList;
         }
     }
 }

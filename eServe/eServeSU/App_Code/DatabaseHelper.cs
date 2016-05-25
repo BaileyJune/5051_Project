@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
@@ -136,62 +136,89 @@ namespace eServeSU
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
-
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         
         public SqlDataReader GetOneOpportunityById(string queryString, int opportunityId)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
+                command.Connection.Open();
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
-            command.Connection.Open();
 
-
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
             
         }
         public SqlDataReader GetOpportunityType(string queryString)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
-
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
-
-            return command.ExecuteReader();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetFocusArea(string queryString)
         {
+            
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+                try {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
-
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetQuarter(string queryString)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetCommunityPartnerPeople(string queryString, int communityPartnerId)
@@ -199,14 +226,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@CPID", SqlDbType.Int).Value = communityPartnerId;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@CPID", SqlDbType.Int).Value = communityPartnerId;
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetAutoPopulatePartnerEval(string queryString,int CPID,int CPPID, int StudentID, int OpportunityID)
@@ -214,30 +247,42 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@CPID", SqlDbType.Int).Value = CPID;
-            command.Parameters.Add("@CPPID", SqlDbType.Int).Value = CPPID;
-            command.Parameters.Add("@StudentID", SqlDbType.Int).Value = StudentID;
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = OpportunityID;
+           try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@CPID", SqlDbType.Int).Value = CPID;
+                command.Parameters.Add("@CPPID", SqlDbType.Int).Value = CPPID;
+                command.Parameters.Add("@StudentID", SqlDbType.Int).Value = StudentID;
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = OpportunityID;
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetcommunityPartner(string queryString, int communityPartnerId)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
+           try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@CPID", SqlDbType.Int).Value = communityPartnerId;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@CPID", SqlDbType.Int).Value = communityPartnerId;
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
 
         }
 
@@ -246,11 +291,17 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public void DeleteCommunityPartnerAlert(string queryString, int AlertID)
@@ -261,9 +312,15 @@ namespace eServeSU
 
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@AlertID", SqlDbType.Int).Value = AlertID;
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch (SqlException)
+                {
+
+                }
             }
         }
 
@@ -295,9 +352,15 @@ namespace eServeSU
                 command.Parameters.Add("@Question3", SqlDbType.VarChar, 4000).Value = Question3;
                 command.Parameters.Add("@Question4", SqlDbType.VarChar, 4000).Value = Question4;
 
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch (SqlException)
+                {
+
+                }
             }
         }
 
@@ -306,14 +369,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@CPPID", SqlDbType.Int).Value = cppid;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@CPPID", SqlDbType.Int).Value = cppid;
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
 
         }
 
@@ -322,15 +391,21 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = OpportunityID;
-            command.Parameters.Add("@StudentID", SqlDbType.Int).Value = StudentID;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = OpportunityID;
+                command.Parameters.Add("@StudentID", SqlDbType.Int).Value = StudentID;
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
 
         }
 
@@ -345,9 +420,15 @@ namespace eServeSU
                 command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
                 command.Parameters.Add("@StudentReflection", SqlDbType.VarChar, 8000).Value = studentReflection;
 
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch (SqlException)
+                {
+
+                }
             }
         }
 
@@ -374,9 +455,15 @@ namespace eServeSU
                 command.Parameters.Add("@Rate6", SqlDbType.VarChar, 50).Value = rate6;
                 command.Parameters.Add("@Comments", SqlDbType.VarChar, 8000).Value = comments;
                 
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch (SqlException)
+                {
+
+                }
             }
         }
 
@@ -395,9 +482,15 @@ namespace eServeSU
                 command.Parameters.Add("@Title", SqlDbType.VarChar, 50).Value = Title;
                 command.Parameters.Add("@EmailID", SqlDbType.VarChar, 50).Value = EmailID;
             
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch (SqlException)
+                {
+
+                }
             }
         }
 
@@ -414,9 +507,15 @@ namespace eServeSU
                 command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = OpportunityID;
                 command.Parameters.Add("@SignUpStatus", SqlDbType.VarChar, 8).Value = SignUpStatus;
 
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch (SqlException)
+                {
+
+                }
             }
         }
 
@@ -429,9 +528,15 @@ namespace eServeSU
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.Add("@CPPID", SqlDbType.Int).Value = CPPID;
                 command.Parameters.Add("@CPID", SqlDbType.Int).Value = CPID;
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch (SqlException)
+                {
+
+                }
             }
         }
 
@@ -451,9 +556,15 @@ namespace eServeSU
                 command.Parameters.Add("@MissionStatement", SqlDbType.VarChar, 8000).Value = MissionStatement;
                 command.Parameters.Add("@WorkDescription", SqlDbType.VarChar, 1000).Value = Description;
 
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch (SqlException)
+                {
+
+                }
             }
         }
 
@@ -461,130 +572,186 @@ namespace eServeSU
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
-
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            return command.ExecuteReader();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }        
 
         public SqlDataReader GetCourseEvaluationByStudent(string queryString)
         {
-            if (string.IsNullOrEmpty(dbConnection))
-                dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+            try
+            {
+                if (string.IsNullOrEmpty(dbConnection))
+                    dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            connection.Open();
-            var command = new SqlCommand(queryString, connection);
+                var connection = new SqlConnection(dbConnection);
+                connection.Open();
+                var command = new SqlCommand(queryString, connection);
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader DeleteAllStudentFocusAreas(string queryString, int studentId)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            //var connection = new SqlConnection(dbConnection);
-            //connection.Open();
-            //var command = new SqlCommand(queryString, connection);
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;            
-            command.Connection.Open();
+            try
+            {
+                //var connection = new SqlConnection(dbConnection);
+                //connection.Open();
+                //var command = new SqlCommand(queryString, connection);
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader AddStudentFocusArea(string queryString, int studentId, int focusAreaId)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            //var connection = new SqlConnection(dbConnection);
-            //connection.Open();
-            //var command = new SqlCommand(queryString, connection);
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@FocusAreaID", SqlDbType.Int).Value = focusAreaId;            
-            command.Parameters.Add("@StudentID", SqlDbType.Int).Value = studentId;            
-            command.Connection.Open();
+            try
+            {
+                //var connection = new SqlConnection(dbConnection);
+                //connection.Open();
+                //var command = new SqlCommand(queryString, connection);
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@FocusAreaID", SqlDbType.Int).Value = focusAreaId;
+                command.Parameters.Add("@StudentID", SqlDbType.Int).Value = studentId;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
+        }
         }
         public SqlDataReader UpdateStudentProfile(string queryString, int studentId, string preferedName, string gender, string isInternationalStudent)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            //var connection = new SqlConnection(dbConnection);
-            //connection.Open();
-            //var command = new SqlCommand(queryString, connection);
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Parameters.Add("@PreferedName", SqlDbType.VarChar, 1000).Value = preferedName;
-            command.Parameters.Add("@Gender", SqlDbType.VarChar, 1000).Value = gender;
-            command.Parameters.Add("@InternationalStudent", SqlDbType.VarChar, 1000).Value = isInternationalStudent;            
-            command.Connection.Open();
+            try
+            {
+                //var connection = new SqlConnection(dbConnection);
+                //connection.Open();
+                //var command = new SqlCommand(queryString, connection);
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Parameters.Add("@PreferedName", SqlDbType.VarChar, 1000).Value = preferedName;
+                command.Parameters.Add("@Gender", SqlDbType.VarChar, 1000).Value = gender;
+                command.Parameters.Add("@InternationalStudent", SqlDbType.VarChar, 1000).Value = isInternationalStudent;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetStudentProfile(string queryString, int studentId)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            //var connection = new SqlConnection(dbConnection);
-            //connection.Open();
-            //var command = new SqlCommand(queryString, connection);
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Connection.Open();
+            try
+            {
+                //var connection = new SqlConnection(dbConnection);
+                //connection.Open();
+                //var command = new SqlCommand(queryString, connection);
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetRegisteredOpportunityByStudentId(string queryString, int studentId)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader RegisteredOpportunityByStudentAndOpportunityId(string queryString, int studentId, int opportunityId)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetOpportunityRegistrationByStudentId(string queryString, int studentId)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Connection.Open();
+
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
 
             return command.ExecuteReader();
         }
@@ -593,13 +760,19 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetVolunteeredAndPartnerApprovedHours(string queryString, int studentId, int opportunityID)
@@ -607,14 +780,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetUnAssignedCourseSection(string queryString, int opportunityId)
@@ -622,13 +801,19 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetAssignedCourseSection(string queryString, int opportunityId)
@@ -636,13 +821,19 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public void AddCourseSectionToOpportunity(string queryString, int opportunityId, string courseSectionIDs)
@@ -650,15 +841,21 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
-            command.Parameters.Add("@CourseSectionIDs", SqlDbType.VarChar, 1000).Value = courseSectionIDs;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
+                command.Parameters.Add("@CourseSectionIDs", SqlDbType.VarChar, 1000).Value = courseSectionIDs;
+                command.Connection.Open();
 
-            command.ExecuteNonQuery();
-            command.Connection.Close();
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+            } catch (SqlException)
+            {
+
+            }
         }
 
         public void RemoveCourseSectionFromOpportunity(string queryString, int opportunityId, string courseSectionIDs)
@@ -666,15 +863,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
-            command.Parameters.Add("@CourseSectionIDs", SqlDbType.VarChar, 1000).Value = courseSectionIDs;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
+                command.Parameters.Add("@CourseSectionIDs", SqlDbType.VarChar, 1000).Value = courseSectionIDs;
+                command.Connection.Open();
 
-            command.ExecuteNonQuery();
-            command.Connection.Close();
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+            } catch (SqlException) {
+
+            }
         }
 
         public SqlDataReader GetOpportunityListForAdmin(string queryString)
@@ -682,25 +884,37 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
-            
-            return command.ExecuteReader();           
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
+
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }          
         }
         public SqlDataReader GetOpportunityStudentListReport(string queryString, int quarterID)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@QuarterID", SqlDbType.Int).Value = quarterID;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@QuarterID", SqlDbType.Int).Value = quarterID;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetTimeEntries(string queryString, int studentId, int opportunityID)
@@ -708,14 +922,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
-            command.Parameters.Add("@StudentID", SqlDbType.Int).Value = studentId;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
+                command.Parameters.Add("@StudentID", SqlDbType.Int).Value = studentId;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetStudentSubmission(string queryString, int studentId, int opportunityID)
@@ -723,14 +943,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
-            command.Parameters.Add("@StudentID", SqlDbType.Int).Value = studentId;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
+                command.Parameters.Add("@StudentID", SqlDbType.Int).Value = studentId;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader UpdateTimeEntries(string queryString, int OpportunityID, int StudentID, DateTime  WorkDate, int PartnerApprovedHours)
@@ -738,33 +964,45 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            //var connection = new SqlConnection(dbConnection);
-            //connection.Open();
-            //var command = new SqlCommand(queryString, connection);
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = OpportunityID;
-            command.Parameters.Add("@StudentID", SqlDbType.Int).Value = StudentID;
-            command.Parameters.Add("@WorkDate", SqlDbType.DateTime).Value = WorkDate;
-            command.Parameters.Add("@PartnerApprovedHours", SqlDbType.Int).Value = PartnerApprovedHours;
-            command.Connection.Open();
+            try
+            {
+                //var connection = new SqlConnection(dbConnection);
+                //connection.Open();
+                //var command = new SqlCommand(queryString, connection);
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = OpportunityID;
+                command.Parameters.Add("@StudentID", SqlDbType.Int).Value = StudentID;
+                command.Parameters.Add("@WorkDate", SqlDbType.DateTime).Value = WorkDate;
+                command.Parameters.Add("@PartnerApprovedHours", SqlDbType.Int).Value = PartnerApprovedHours;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetStudentTimeEntriesByOpportunityID(string queryString, int studentId, int opportunityID)
         {
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public void SubmitStudentTimeEntry(string queryString, string workDate, int opportunityID, int studentID,
                                             int cppid, int partnerApprovedHours, string timeEntryDate, int hoursVolunteered)
@@ -772,20 +1010,26 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.CommandType = CommandType.StoredProcedure;            
-            command.Parameters.Add("@WorkDate", SqlDbType.VarChar, 1000).Value = workDate;
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int, 1000).Value = opportunityID;
-            command.Parameters.Add("@StudentID", SqlDbType.Int, 1000).Value = studentID;
-            command.Parameters.Add("@CPPID", SqlDbType.Int, 1000).Value = cppid;
-            command.Parameters.Add("@PartnerApprovedHours", SqlDbType.NVarChar, 1000).Value = partnerApprovedHours;
-            command.Parameters.Add("@TimeEntryDate", SqlDbType.VarChar, 1000).Value = timeEntryDate;
-            command.Parameters.Add("@HoursVolunteered", SqlDbType.Int, 1000).Value = hoursVolunteered;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@WorkDate", SqlDbType.VarChar, 1000).Value = workDate;
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int, 1000).Value = opportunityID;
+                command.Parameters.Add("@StudentID", SqlDbType.Int, 1000).Value = studentID;
+                command.Parameters.Add("@CPPID", SqlDbType.Int, 1000).Value = cppid;
+                command.Parameters.Add("@PartnerApprovedHours", SqlDbType.NVarChar, 1000).Value = partnerApprovedHours;
+                command.Parameters.Add("@TimeEntryDate", SqlDbType.VarChar, 1000).Value = timeEntryDate;
+                command.Parameters.Add("@HoursVolunteered", SqlDbType.Int, 1000).Value = hoursVolunteered;
+                command.Connection.Open();
 
-            command.ExecuteNonQuery();
-            command.Connection.Close();
+                command.ExecuteNonQuery();
+                command.Connection.Close();
+            } catch (SqlException)
+            {
+
+            }
         }
 
         public void AssingnOpportunityToStudentByAdmin(string queryString, int opportunityID, string studentEmail)
@@ -793,14 +1037,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
-            command.Parameters.Add("@StudentEmail", SqlDbType.NVarChar).Value = studentEmail;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
+                command.Parameters.Add("@StudentEmail", SqlDbType.NVarChar).Value = studentEmail;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+            } catch (SqlException)
+            {
+
+            }
 
         }
 
@@ -809,13 +1059,19 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@profID", SqlDbType.Int).Value = professorID;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@profID", SqlDbType.Int).Value = professorID;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetPartnerEvaluationByStudentIDOppID(string queryString, int studentId, int opportunityID)
@@ -823,14 +1079,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetStudentEvaluationByStudentIDOppID(string queryString, int studentId, int opportunityID)
@@ -838,14 +1100,20 @@ namespace eServeSU
             if (string.IsNullOrEmpty(dbConnection))
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+            try
+            {
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            return command.ExecuteReader();
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
     }
-}
+

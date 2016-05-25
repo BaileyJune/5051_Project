@@ -161,20 +161,26 @@ namespace eServeSU
             List<CommunityPartnersPeople> communityPartnerPeopleList = new List<CommunityPartnersPeople>();
             CommunityPartnersPeople communityPartnerPeople ;
 
-            while (reader.Read())
+            try
             {
-                communityPartnerPeople = new CommunityPartnersPeople();
-                communityPartnerPeople.CPPID = Convert.ToInt32(reader["SupervisorID"]);
-                communityPartnerPeople.FirstName = reader["FirstName"].ToString();
-                communityPartnerPeople.LastName = reader["LastName"].ToString();
-                communityPartnerPeople.Title = reader["Title"].ToString();
-                communityPartnerPeople.Phone = reader["Phone"].ToString();
-                communityPartnerPeople.EmailID = reader["EmailID"].ToString();
+                while (reader.Read())
+                {
+                    communityPartnerPeople = new CommunityPartnersPeople();
+                    communityPartnerPeople.CPPID = Convert.ToInt32(reader["SupervisorID"]);
+                    communityPartnerPeople.FirstName = reader["FirstName"].ToString();
+                    communityPartnerPeople.LastName = reader["LastName"].ToString();
+                    communityPartnerPeople.Title = reader["Title"].ToString();
+                    communityPartnerPeople.Phone = reader["Phone"].ToString();
+                    communityPartnerPeople.EmailID = reader["EmailID"].ToString();
 
-                communityPartnerPeopleList.Add(communityPartnerPeople);
+                    communityPartnerPeopleList.Add(communityPartnerPeople);
+                }
+
+                return communityPartnerPeopleList;
+            } catch (NullReferenceException)
+            {
+                return null;
             }
-
-            return communityPartnerPeopleList;
         }
 
         public CommunityPartnersPeople GetSupervisor(int cppid)
