@@ -116,19 +116,26 @@ namespace eServeSU
             List<Quarter> quarterList = new List<Quarter>();
             Quarter quarter = null;
 
-            while (reader.Read())
+            try
             {
-                quarter = new Quarter();
-                quarter.QuarterId = Convert.ToInt32(reader["QuarterId"]);
-                quarter.QuarterName = reader["QuarterName"].ToString();
-                quarter.QuarterShortName = reader["QuarterShortName"].ToString();
-                quarter.StartDate = Convert.ToDateTime(reader["StartDate"]);
-                quarter.EndDate = Convert.ToDateTime(reader["EndDate"]);
+                while (reader.Read())
+                {
+                    quarter = new Quarter();
+                    quarter.QuarterId = Convert.ToInt32(reader["QuarterId"]);
+                    quarter.QuarterName = reader["QuarterName"].ToString();
+                    //   quarter.ShortName = reader["ShortName"].ToString();
+                    // quarter.StartDate = Convert.ToDateTime(reader["StartDate"]);
+                    // quarter.EndDate = Convert.ToDateTime(reader["EndDate"]);
 
-                quarterList.Add(quarter);
+                    quarterList.Add(quarter);
+
+                }
+
+                return quarterList;
+            } catch (NullReferenceException)
+            {
+                return null; 
             }
-
-            return quarterList;
         }
 
         public int GetCurrentQuarterId()
