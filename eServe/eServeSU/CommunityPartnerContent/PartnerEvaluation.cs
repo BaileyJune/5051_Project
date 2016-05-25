@@ -166,19 +166,19 @@ namespace eServeSU
             this. Rate3, this.Rate4, this.Rate5, this.Rate6, this.Question2, this.Question3, this.Question4);
         }
 
-        public void AutoPopulatePartnerEval()
+        public void AutoPopulatePartnerEval(int CPID, int CPPID, int StudentID, int OpportunityID)
         {
-            var reader = dbHelper.GetAutoPopulatePartnerEval(Constant.SP_GetAutoPopulate, this.CPID, this.CPPID, this.StudentID, this.OpportunityID);
+            var reader = dbHelper.GetAutoPopulatePartnerEval(Constant.SP_GetAutoPopulate, CPID, CPPID, StudentID, tOpportunityID);
             while (reader.Read())
             {
                 CPID = Convert.ToInt32(reader["CPID"]);
                 OrganizationName = reader["OrganizationName"].ToString();
-                CPPID = Convert.ToInt32(reader["CPPID"]);
-                SupervisorFirstName = reader["SupervisorFirstName"].ToString();
-                SupervisorLastName = reader["SupervisorLastName"].ToString();
-                StudentID = Convert.ToInt32(reader["StudentID"]);
-                StudentFirstName = reader["StudentFirstName"].ToString();
-                StudentLastName = reader["StudentLastName"].ToString();
+               // CPPID = Convert.ToInt32(reader["CPPID"]);
+                //SupervisorFirstName = reader["SupervisorFirstName"].ToString();
+                //SupervisorLastName = reader["SupervisorLastName"].ToString();
+                //StudentID = Convert.ToInt32(reader["StudentID"]);
+               // StudentFirstName = reader["StudentFirstName"].ToString();
+               // StudentLastName = reader["StudentLastName"].ToString();
             }
         }
     }
