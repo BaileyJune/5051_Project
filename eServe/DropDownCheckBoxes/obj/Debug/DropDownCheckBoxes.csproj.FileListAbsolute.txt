@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\DropDownCheckBoxes\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\DropDownCheckBoxes\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\DropDownCheckBoxes\obj\Debug\DropDownCheckBoxes.csprojResolveAssemblyReference.cache
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\DropDownCheckBoxes\obj\Debug\DropDownCheckBoxes.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\DropDownCheckBoxes\obj\Debug\DropDownCheckBoxes.pdb
+=======
+>>>>>>> 2babd29afcf60d21dc7270712d3f10f3f5476d22
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\DropDownCheckBoxes\bin\Debug\DropDownCheckBoxes.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\DropDownCheckBoxes\bin\Debug\DropDownCheckBoxes.pdb
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\DropDownCheckBoxes\obj\Debug\DropDownCheckBoxes.csprojResolveAssemblyReference.cache
