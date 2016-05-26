@@ -475,7 +475,7 @@ namespace eServeSU
 
         public List<Opportunity> GetOpportunityListForFaculty()
         {
-            var reader = dbHelper.GetOpportunityListForAdmin(Constant.SP_GetOpportunityListForAdmin);
+            var reader = dbHelper.GetOpportunityListForAdmin(Constant.SP_GetOpportunityListForFaculty);
 
             List<Opportunity> oppList = new List<Opportunity>();
             Opportunity opp = null;
