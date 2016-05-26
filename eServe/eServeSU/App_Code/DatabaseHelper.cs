@@ -912,17 +912,21 @@ namespace eServeSU
 
         public void AssingnOpportunityToStudentByAdmin(string queryString, int opportunityID, string studentEmail)
         {
-            if (string.IsNullOrEmpty(dbConnection))
-                dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+            try {
+                if (string.IsNullOrEmpty(dbConnection))
+                    dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
-            var connection = new SqlConnection(dbConnection);
-            var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
-            command.Parameters.Add("@StudentEmail", SqlDbType.NVarChar).Value = studentEmail;
-            command.CommandType = CommandType.StoredProcedure;
-            command.Connection.Open();
+                var connection = new SqlConnection(dbConnection);
+                var command = new SqlCommand(queryString, connection);
+                command.Parameters.Add("@OpportunityID", SqlDbType.Int).Value = opportunityID;
+                command.Parameters.Add("@StudentEmail", SqlDbType.NVarChar).Value = studentEmail;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection.Open();
 
-            command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            { }
 
         }
 
@@ -933,11 +937,11 @@ namespace eServeSU
 
             var connection = new SqlConnection(dbConnection);
             var command = new SqlCommand(queryString, connection);
-            command.Parameters.Add("@profID", SqlDbType.Int).Value = professorID;
+            command.Parameters.Add("@professorID", SqlDbType.Int).Value = professorID;
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            try
+           try
             {
                 return command.ExecuteReader();
             }

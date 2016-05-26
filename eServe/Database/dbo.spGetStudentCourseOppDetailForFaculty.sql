@@ -5,7 +5,7 @@ GO
 
 
 CREATE PROCEDURE [dbo].[spGetStudentCourseOppDetailForFaculty]	
-	@profID int 
+	@professorID int 
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -40,6 +40,6 @@ BEGIN
 	ON
 		sec.SectionID = os.SectionID
 	WHERE
-		sec.ProfessorID = @profID
+		sec.ProfessorID = @professorID
 END
 GO
