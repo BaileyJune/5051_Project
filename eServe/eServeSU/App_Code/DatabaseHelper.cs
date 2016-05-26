@@ -58,10 +58,15 @@ namespace eServeSU
                 command.Parameters.Add("@QuarterID", SqlDbType.Int).Value = quarterId;
                 command.Parameters.Add("@JobHours", SqlDbType.VarChar, 20).Value = jobHours;
                 command.Parameters.Add("@DistanceFromSU", SqlDbType.VarChar, 8).Value = distanceFromSu;
+                try
+                {
+                    command.Connection.Open();
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                } catch
+                {
 
-                command.Connection.Open();
-                command.ExecuteNonQuery();
-                command.Connection.Close();
+                }
             }
         }
 
@@ -493,8 +498,13 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;            
             command.Connection.Open();
-
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            } catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader AddStudentFocusArea(string queryString, int studentId, int focusAreaId)
         {
@@ -511,7 +521,14 @@ namespace eServeSU
             command.Parameters.Add("@StudentID", SqlDbType.Int).Value = studentId;            
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader UpdateStudentProfile(string queryString, int studentId, string preferedName, string gender, string isInternationalStudent)
         {
@@ -530,7 +547,14 @@ namespace eServeSU
             command.Parameters.Add("@InternationalStudent", SqlDbType.VarChar, 1000).Value = isInternationalStudent;            
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetStudentProfile(string queryString, int studentId)
         {
@@ -546,7 +570,14 @@ namespace eServeSU
             command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetRegisteredOpportunityByStudentId(string queryString, int studentId)
         {
@@ -559,7 +590,14 @@ namespace eServeSU
             command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader RegisteredOpportunityByStudentAndOpportunityId(string queryString, int studentId, int opportunityId)
         {
@@ -573,7 +611,14 @@ namespace eServeSU
             command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetOpportunityRegistrationByStudentId(string queryString, int studentId)
         {
@@ -586,7 +631,14 @@ namespace eServeSU
             command.Parameters.Add("@StudentId", SqlDbType.Int).Value = studentId;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetOpportunityDetailByOpportunityId(string queryString, int opportunityId)
         {
@@ -599,7 +651,14 @@ namespace eServeSU
             command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetVolunteeredAndPartnerApprovedHours(string queryString, int studentId, int opportunityID)
@@ -614,7 +673,14 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetUnAssignedCourseSection(string queryString, int opportunityId)
@@ -628,7 +694,14 @@ namespace eServeSU
             command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetAssignedCourseSection(string queryString, int opportunityId)
@@ -642,7 +715,14 @@ namespace eServeSU
             command.Parameters.Add("@OpportunityId", SqlDbType.Int).Value = opportunityId;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public void AddCourseSectionToOpportunity(string queryString, int opportunityId, string courseSectionIDs)
@@ -686,8 +766,15 @@ namespace eServeSU
             var command = new SqlCommand(queryString, connection);
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
-            
-            return command.ExecuteReader();           
+
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetOpportunityStudentListReport(string queryString, int quarterID)
         {
@@ -700,7 +787,14 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetTimeEntries(string queryString, int studentId, int opportunityID)
@@ -715,7 +809,14 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetStudentSubmission(string queryString, int studentId, int opportunityID)
@@ -730,7 +831,14 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader UpdateTimeEntries(string queryString, int OpportunityID, int StudentID, DateTime  WorkDate, int PartnerApprovedHours)
@@ -750,7 +858,14 @@ namespace eServeSU
             command.Parameters.Add("@PartnerApprovedHours", SqlDbType.Int).Value = PartnerApprovedHours;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public SqlDataReader GetStudentTimeEntriesByOpportunityID(string queryString, int studentId, int opportunityID)
         {
@@ -764,7 +879,14 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
         public void SubmitStudentTimeEntry(string queryString, string workDate, int opportunityID, int studentID,
                                             int cppid, int partnerApprovedHours, string timeEntryDate, int hoursVolunteered)
@@ -815,7 +937,14 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetPartnerEvaluationByStudentIDOppID(string queryString, int studentId, int opportunityID)
@@ -830,7 +959,14 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
 
         public SqlDataReader GetStudentEvaluationByStudentIDOppID(string queryString, int studentId, int opportunityID)
@@ -845,7 +981,14 @@ namespace eServeSU
             command.CommandType = CommandType.StoredProcedure;
             command.Connection.Open();
 
-            return command.ExecuteReader();
+            try
+            {
+                return command.ExecuteReader();
+            }
+            catch (SqlException)
+            {
+                return null;
+            }
         }
     }
 }

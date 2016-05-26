@@ -66,13 +66,12 @@ namespace eServeSU
 
                     if (this.name == "")
                     {
-                        throw new Exception(
-                            "Please provide name ...");
+                        throw new Exception("Please provide name ...");
                     }
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    
                 }
             }
         }
@@ -82,10 +81,17 @@ namespace eServeSU
             get { return this.location; }
             set
             {
-                this.location = value;
-                if (this.location == "")
+                try
                 {
-                    throw new Exception("Please provide location ...");
+                    this.location = value;
+                    if (this.location == "")
+                    {
+                        throw new Exception("Please provide location ...");
+                    }
+                }
+                catch (Exception e)
+                {
+
                 }
 
             }
@@ -96,10 +102,17 @@ namespace eServeSU
             get { return this.organizationName; }
             set
             {
-                this.organizationName = value;
-                if (this.organizationName == "")
+                try
                 {
-                    throw new Exception("Please provide organization name ...");
+                    this.organizationName = value;
+                    if (this.organizationName == "")
+                    {
+                        throw new Exception("Please provide organization name ...");
+                    }
+                }
+                catch (Exception e)
+                {
+
                 }
 
             }
@@ -110,10 +123,17 @@ namespace eServeSU
             get { return this.oppId; }
             set
             {
-                this.oppId = value;
-                if (this.oppId == 0)
+                try
                 {
-                    throw new Exception("Please provide opportunity Id ...");
+                    this.oppId = value;
+                    if (this.oppId == 0)
+                    {
+                        throw new Exception("Please provide opportunity Id ...");
+                    }
+                }
+                catch (Exception e)
+                {
+
                 }
             }
         }
@@ -123,11 +143,18 @@ namespace eServeSU
             get { return this.jobDescription; }
             set
             {
-                this.jobDescription = value;
-
-                if (this.jobDescription == "")
+                try
                 {
-                    throw new Exception("Please provide job description ...");
+                    this.jobDescription = value;
+
+                    if (this.jobDescription == "")
+                    {
+                        throw new Exception("Please provide job description ...");
+                    }
+                }
+                catch (Exception e)
+                {
+
                 }
             }
         }
@@ -185,7 +212,7 @@ namespace eServeSU
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    
                 }
             }
         }
@@ -207,7 +234,7 @@ namespace eServeSU
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    
                 }
             }
         }
@@ -348,7 +375,7 @@ namespace eServeSU
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    
                 }
             }
         }
