@@ -45,7 +45,7 @@ namespace eServeSU
             while (reader.Read())
             {
               OrganizationName = reader["OrganizationName"].ToString();
-              Answer1 = reader["Answer1"].ToString();
+           /*   Answer1 = reader["Answer1"].ToString();
               Answer2 = reader["Answer2"].ToString();
               Answer3 = reader["Answer3"].ToString();
               Answer4 = reader["Answer4"].ToString();
@@ -54,7 +54,7 @@ namespace eServeSU
               Rate3 = reader["Rate3"].ToString();
               Rate4 = reader["Rate4"].ToString();
               Rate5 = reader["Rate5"].ToString();
-              Rate6 = reader["Rate6"].ToString();
+              Rate6 = reader["Rate6"].ToString();*/
               Comments = reader["Comments"].ToString();
             } reader.Close();
         }
