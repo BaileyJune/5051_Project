@@ -49,24 +49,6 @@ namespace eServeSU.Account {
         protected global::System.Web.UI.WebControls.TextBox Password;
         
         /// <summary>
-        /// chkcommunitypartner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkcommunitypartner;
-        
-        /// <summary>
-        /// lblCommunityPartner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCommunityPartner;
-        
-        /// <summary>
         /// RememberMe control.
         /// </summary>
         /// <remarks>

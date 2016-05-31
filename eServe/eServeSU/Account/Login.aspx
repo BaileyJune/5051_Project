@@ -30,8 +30,8 @@
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
                             <br />
-                            <asp:CheckBox ID="chkcommunitypartner" runat="server" />
-                            <asp:Label ID="lblCommunityPartner" runat="server" AssociatedControlID="chkcommunitypartner" Text="CommunityPartner?"></asp:Label>
+                            <%--<asp:CheckBox ID="chkcommunitypartner" runat="server" />
+                            <asp:Label ID="lblCommunityPartner" runat="server" AssociatedControlID="chkcommunitypartner" Text="CommunityPartner?"></asp:Label>--%>
                         </div>
                     </div>
                     <div class="form-group">
