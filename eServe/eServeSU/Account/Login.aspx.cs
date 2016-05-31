@@ -41,12 +41,12 @@ namespace eServeSU.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
-                        if (chkcommunitypartner.Checked == true)
+                        //if (chkcommunitypartner.Checked == true)
 
-                            Response.Redirect("Partner@eServeSU.net");
-                        else
+                        //    Response.Redirect("Partner@eServeSU.net");
+                        //else
                         
-                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                      
 
                         break;
