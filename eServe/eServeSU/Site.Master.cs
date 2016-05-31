@@ -44,27 +44,27 @@ namespace eServeSU
                 Response.Cookies.Set(responseCookie);
             }
 
-            Page.PreLoad += master_Page_PreLoad;
+           // Page.PreLoad += master_Page_PreLoad;
         }
 
-        protected void master_Page_PreLoad(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
-                // Set Anti-XSRF token
-                ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
-                ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
-            }
-            else
-            {
-                // Validate the Anti-XSRF token
-                if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
-                    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
-                {
-                    throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
-                }
-            }
-        }
+        //protected void master_Page_PreLoad(object sender, EventArgs e)
+        //{
+        //    if (!IsPostBack)
+        //    {
+        //        // Set Anti-XSRF token
+        //        ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
+        //        ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
+        //    }
+        //    else
+        //    {
+        //        // Validate the Anti-XSRF token
+        //        if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
+        //            || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
+        //        {
+        //            throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
+        //        }
+        //    }
+        //}
 
         protected void Page_Load(object sender, EventArgs e)
         {
