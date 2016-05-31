@@ -90,14 +90,9 @@ namespace eServeSU
             if (Session["UserName"] != null && Session["Password"] != null)
             {
                 var reader = dbHelper.VerifyUser(Constant.sp_VerifyUser, Session["UserName"].ToString(), Session["Password"].ToString());
-                // int roleID = Convert.ToInt32(reader["RoleID"]);
-                string username;
-                string pswd;
                 int roleID = 0;
-               while (reader.Read())
+                while (reader.Read())
                 {
-                    username = reader["Email"].ToString();
-                    pswd = reader["Password"].ToString();
                     roleID = Convert.ToInt32(reader["RoleID"]);
                 }
 
