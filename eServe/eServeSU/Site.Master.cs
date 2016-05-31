@@ -44,27 +44,27 @@ namespace eServeSU
                 Response.Cookies.Set(responseCookie);
             }
 
-           // Page.PreLoad += master_Page_PreLoad;
+           Page.PreLoad += master_Page_PreLoad;
         }
 
-        //protected void master_Page_PreLoad(object sender, EventArgs e)
-        //{
-        //    if (!IsPostBack)
-        //    {
-        //        // Set Anti-XSRF token
-        //        ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
-        //        ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
-        //    }
-        //    else
-        //    {
-        //        // Validate the Anti-XSRF token
-        //        if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
-        //            || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
-        //        {
-        //            throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
-        //        }
-        //    }
-        //}
+        protected void master_Page_PreLoad(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                // Set Anti-XSRF token
+                ViewState[AntiXsrfTokenKey] = Page.ViewStateUserKey;
+                ViewState[AntiXsrfUserNameKey] = Context.User.Identity.Name ?? String.Empty;
+            }
+            else
+            {
+                // Validate the Anti-XSRF token
+                if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
+                    || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
+                {
+                    throw new InvalidOperationException("Validation of Anti-XSRF token failed.");
+                }
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -90,7 +90,17 @@ namespace eServeSU
             if (Session["UserName"] != null && Session["Password"] != null)
             {
                 var reader = dbHelper.VerifyUser(Constant.sp_VerifyUser, Session["UserName"].ToString(), Session["Password"].ToString());
-                int roleID = Convert.ToInt32(reader["RoleID"]);
+                // int roleID = Convert.ToInt32(reader["RoleID"]);
+                string username;
+                string pswd;
+                int roleID = 0;
+               while (reader.Read())
+                {
+                    username = reader["Email"].ToString();
+                    pswd = reader["Password"].ToString();
+                    roleID = Convert.ToInt32(reader["RoleID"]);
+                }
+
                 //lblRegister.Visible = false;
                 //lblLogOut.Visible = true;
                     switch (roleID)
