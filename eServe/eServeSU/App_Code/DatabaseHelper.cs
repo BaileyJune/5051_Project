@@ -29,13 +29,20 @@ namespace eServeSU
             set { dbConnection = value; }
         }
 
-        public void VerifyUser(string queryString, string email, string password, int roleID)
+        //Verify user login
+        public SqlDataReader VerifyUser(string queryString, string email, string password, int roleID)
         {
-            using (var connection = new SqlConnection(dbConnection))
-            {
-                var command = new SqlCommand(queryString, connection);
-                command.CommandType = CommandType.StoredProcedure;
-            }
+            if (string.IsNullOrEmpty(dbConnection))
+                dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+
+            var connection = new SqlConnection(dbConnection);
+            var command = new SqlCommand(queryString, connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = email;
+            command.Parameters.Add("@password", SqlDbType.VarChar, 50).Value = password;
+            
+
+            return command.ExecuteReader();
         }
 
         public void AddOpportunity(string queryString, string name, string location, string jobDescription,
