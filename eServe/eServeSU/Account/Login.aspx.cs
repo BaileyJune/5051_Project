@@ -37,6 +37,7 @@ namespace eServeSU.Account
                 
                 result = SignInStatus.Success;
                 Session["UserName"] = Email.Text;
+                Session["Password"] = Password.Text;
 
                 switch (result)
                 {
