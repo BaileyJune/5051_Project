@@ -29,6 +29,15 @@ namespace eServeSU
             set { dbConnection = value; }
         }
 
+        public void VerifyUser(string queryString, string email, string password, int roleID)
+        {
+            using (var connection = new SqlConnection(dbConnection))
+            {
+                var command = new SqlCommand(queryString, connection);
+                command.CommandType = CommandType.StoredProcedure;
+            }
+        }
+
         public void AddOpportunity(string queryString, string name, string location, string jobDescription,
             string requirement, string timeCommitment, int totalNumberSlot, DateTime orientationDate,
             string resumeRequired,
