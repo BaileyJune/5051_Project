@@ -86,6 +86,7 @@ namespace eServeSU
             //create DB connection
             DatabaseHelper dbHelper = new DatabaseHelper();
             dbHelper.DbConnection = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
+            //var reader = dbHelper.VerifyUser(Constant.SP_Ve)
 
             if (Session["UserName"] != null)
             {
