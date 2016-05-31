@@ -45,6 +45,22 @@ namespace eServeSU
             return command.ExecuteReader();
         }
 
+        public SqlDataReader GetType(string queryString)
+        {
+            if (string.IsNullOrEmpty(dbConnection))
+                dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
+
+            var connection = new SqlConnection(dbConnection);
+            connection.Open();
+            var command = new SqlCommand(queryString, connection);
+            //command.CommandType = CommandType.StoredProcedure;
+           // command.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = email;
+           //command.Parameters.Add("@password", SqlDbType.VarChar, 50).Value = password;
+
+
+            return command.ExecuteReader();
+        }
+
         public void AddOpportunity(string queryString, string name, string location, string jobDescription,
             string requirement, string timeCommitment, int totalNumberSlot, DateTime orientationDate,
             string resumeRequired,
