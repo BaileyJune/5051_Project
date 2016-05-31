@@ -86,10 +86,11 @@ namespace eServeSU
             //create DB connection
             DatabaseHelper dbHelper = new DatabaseHelper();
             dbHelper.DbConnection = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
-            //var reader = dbHelper.VerifyUser(Constant.SP_Ve)
 
-            if (Session["UserName"] != null)
+            if (Session["UserName"] != null && Session["Password"] != null)
             {
+                var reader = dbHelper.VerifyUser(Constant.sp_VerifyUser, Session["UserName"].ToString(), Session["Password"].ToString());
+                int roleID = Convert.ToInt32(reader["RoleID"]);
                 //lblRegister.Visible = false;
                 //lblLogOut.Visible = true;
                 switch (Session["UserName"].ToString())
