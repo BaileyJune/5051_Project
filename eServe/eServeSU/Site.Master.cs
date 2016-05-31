@@ -93,39 +93,40 @@ namespace eServeSU
                 int roleID = Convert.ToInt32(reader["RoleID"]);
                 //lblRegister.Visible = false;
                 //lblLogOut.Visible = true;
-                switch (roleID)
-                {
-                    case 3:
-                        hlOpp.Visible = true;
-                        h1Opportunities.Visible = true;
-                        h1ReadEvaluation.Visible = true;
-                        h1CommunityPartnerView.Visible = true;
-                        h1CommunityPartnerStudentView.Visible = true;
-                       
-                        //lblLogOut.Visible = true;
-                        break;
-                    case 2:
-                        hlStudentRegistered.Visible = true;
-                        hlStudentProfile.Visible = true;
-                        hlStudentRegistration.Visible = true;
-                        //lblLogOut.Visible = true;
-                        Session["Student_StudentID"] = 106288; // todo: remove after implement ADFS with SeattleU IT.
-                        break;
-                    case 4:
-                        hlAdmin.Visible = true;
-                        hlAdminCourse.Visible = true;
-                        //lblLogOut.Visible = true;
-                        break;
-                    case 1:
-                        hlFaculty.Visible = true;
-                        hlFacultyOpp.Visible = true;
-                        //lblLogOut.Visible = true;
-                        //here should get value for Faculty Id (Professor Id)
-                        Session["ProfessorID"] = 2;
-                        break;
-                    default:
-                        break;
-                }                
+                    switch (roleID)
+                    {
+                        case 3:
+                            hlOpp.Visible = true;
+                            h1Opportunities.Visible = true;
+                            h1ReadEvaluation.Visible = true;
+                            h1CommunityPartnerView.Visible = true;
+                            h1CommunityPartnerStudentView.Visible = true;
+
+                            //lblLogOut.Visible = true;
+                            break;
+                        case 2:
+                            hlStudentRegistered.Visible = true;
+                            hlStudentProfile.Visible = true;
+                            hlStudentRegistration.Visible = true;
+                            //lblLogOut.Visible = true;
+                            Session["Student_StudentID"] = 106288; // todo: remove after implement ADFS with SeattleU IT.
+                            break;
+                        case 4:
+                            hlAdmin.Visible = true;
+                            hlAdminCourse.Visible = true;
+                            //lblLogOut.Visible = true;
+                            break;
+                        case 1:
+                            hlFaculty.Visible = true;
+                            hlFacultyOpp.Visible = true;
+                            //lblLogOut.Visible = true;
+                            //here should get value for Faculty Id (Professor Id)
+                            Session["ProfessorID"] = 2;
+                            break;
+                        default:
+                            break;
+                    }
+       
             }
             else
             {

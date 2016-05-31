@@ -36,6 +36,7 @@ namespace eServeSU
                 dbConnection = ConfigurationManager.AppSettings["eServeConnection"];
 
             var connection = new SqlConnection(dbConnection);
+            connection.Open();
             var command = new SqlCommand(queryString, connection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = email;
