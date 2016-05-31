@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace eServeSU
 {
@@ -80,6 +81,11 @@ namespace eServeSU
 
             Label lblRegister = (Label)lvLogin.FindControl("lblRegister");
             Label lblLogOut = (Label)lvLogin.FindControl("lblLogOut");
+
+
+            //create DB connection
+            DatabaseHelper dbHelper = new DatabaseHelper();
+            dbHelper.DbConnection = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
 
             if (Session["UserName"] != null)
             {
