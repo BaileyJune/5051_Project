@@ -47,7 +47,7 @@ namespace eServeSU.Account
                         //    Response.Redirect("Partner@eServeSU.net");
                         //else
                         
-                        //IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                      
 
                         break;
