@@ -5,7 +5,7 @@ GO
 
 
 CREATE PROCEDURE [dbo].[spVerifyUser]	
-	@email varchar, @password varchar
+	@email varchar(50), @password varchar(50)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
