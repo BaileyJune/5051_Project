@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.csprojResolveAssemblyReference.cache
-=======
-C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.csprojResolveAssemblyReference.cache
->>>>>>> development
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Admin\Report.xlsx
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.Tests.dll.config
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.Tests.dll
@@ -18,17 +14,10 @@ C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\De
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.FriendlyUrls.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Owin.dll
-<<<<<<< HEAD
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
-=======
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.dll
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.dll
->>>>>>> development
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.pdb
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.xml
@@ -38,18 +27,10 @@ C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\De
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.FriendlyUrls.xml
-<<<<<<< HEAD
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.xml
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
-=======
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.xml
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.xml
-C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.csprojResolveAssemblyReference.cache
->>>>>>> development
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.dll
 C:\Users\Zach Madigan\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.pdb
 C:\Users\Greg\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Admin\Report.xlsx
@@ -84,3 +65,38 @@ C:\Users\Greg\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Micr
 C:\Users\Greg\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Greg\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.dll
 C:\Users\Greg\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.pdb
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Admin\Report.xlsx
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.Tests.dll.config
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.Tests.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.Tests.pdb
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\DropDownCheckBoxes.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Owin.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\eServeSU.pdb
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\DropDownCheckBoxes.pdb
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\bin\Debug\EntityFramework.xml
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.dll
+C:\Users\Bailey\Documents\GitHub\5051_Project\eServe\eServeSU.Tests\obj\Debug\eServeSU.Tests.pdb

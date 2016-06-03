@@ -89,7 +89,7 @@ namespace eServeSU
 
             if (Session["UserName"] != null && Session["Password"] != null)
             {
-<<<<<<< HEAD
+
                 lblRegister.Visible = false;
                 lblLogOut.Visible = true;
                 switch (Session["UserName"].ToString())
@@ -125,7 +125,7 @@ namespace eServeSU
                     default:
                         break;
                 }                
-=======
+
                 var reader = dbHelper.VerifyUser(Constant.sp_VerifyUser, Session["UserName"].ToString(), Session["Password"].ToString());
                 int roleID = 0;
                 while (reader.Read())
@@ -169,7 +169,7 @@ namespace eServeSU
                             break;
                     }
        
->>>>>>> development
+
             }
             else
             {
