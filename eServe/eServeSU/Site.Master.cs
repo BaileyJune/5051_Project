@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace eServeSU
 {
@@ -43,7 +44,7 @@ namespace eServeSU
                 Response.Cookies.Set(responseCookie);
             }
 
-            Page.PreLoad += master_Page_PreLoad;
+           Page.PreLoad += master_Page_PreLoad;
         }
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
@@ -81,8 +82,14 @@ namespace eServeSU
             Label lblRegister = (Label)lvLogin.FindControl("lblRegister");
             Label lblLogOut = (Label)lvLogin.FindControl("lblLogOut");
 
-            if (Session["UserName"] != null)
+
+            //create DB connection
+            DatabaseHelper dbHelper = new DatabaseHelper();
+            dbHelper.DbConnection = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
+
+            if (Session["UserName"] != null && Session["Password"] != null)
             {
+<<<<<<< HEAD
                 lblRegister.Visible = false;
                 lblLogOut.Visible = true;
                 switch (Session["UserName"].ToString())
@@ -118,6 +125,51 @@ namespace eServeSU
                     default:
                         break;
                 }                
+=======
+                var reader = dbHelper.VerifyUser(Constant.sp_VerifyUser, Session["UserName"].ToString(), Session["Password"].ToString());
+                int roleID = 0;
+                while (reader.Read())
+                {
+                    roleID = Convert.ToInt32(reader["RoleID"]);
+                }
+
+                //lblRegister.Visible = false;
+                //lblLogOut.Visible = true;
+                    switch (roleID)
+                    {
+                        case 3:
+                            hlOpp.Visible = true;
+                            h1Opportunities.Visible = true;
+                            h1ReadEvaluation.Visible = true;
+                            h1CommunityPartnerView.Visible = true;
+                            h1CommunityPartnerStudentView.Visible = true;
+
+                            //lblLogOut.Visible = true;
+                            break;
+                        case 2:
+                            hlStudentRegistered.Visible = true;
+                            hlStudentProfile.Visible = true;
+                            hlStudentRegistration.Visible = true;
+                            //lblLogOut.Visible = true;
+                            Session["Student_StudentID"] = 106288; // todo: remove after implement ADFS with SeattleU IT.
+                            break;
+                        case 4:
+                            hlAdmin.Visible = true;
+                            hlAdminCourse.Visible = true;
+                            //lblLogOut.Visible = true;
+                            break;
+                        case 1:
+                            hlFaculty.Visible = true;
+                            hlFacultyOpp.Visible = true;
+                            //lblLogOut.Visible = true;
+                            //here should get value for Faculty Id (Professor Id)
+                            Session["ProfessorID"] = 2;
+                            break;
+                        default:
+                            break;
+                    }
+       
+>>>>>>> development
             }
             else
             {

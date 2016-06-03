@@ -13,6 +13,7 @@ namespace eServeSU
     {
         public CommunityPartnersPeople()
         {
+            cpId = 5;
             dbHelper = new DatabaseHelper();
             dbHelper.DbConnection = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
         }

@@ -21,11 +21,12 @@ namespace eServeUnitTest
         [Description("")]
         public void Test_GetAllOpportunity()
         {
-            //Initialize SqlQueryHelper object
-            var sqlConnection = new SqlConnection(ConnectionString);
+
+        //Initialize SqlQueryHelper object
+        var sqlConnection = new SqlConnection(ConnectionString);
             sqlConnection.Open();
 
-            var command = new SqlCommand("select count(*) from opportunity");
+            var command = new SqlCommand("select count(*) from opportunity", sqlConnection);
             var oppCount = Convert.ToInt32(command.ExecuteScalar());
 
             //Opportunity

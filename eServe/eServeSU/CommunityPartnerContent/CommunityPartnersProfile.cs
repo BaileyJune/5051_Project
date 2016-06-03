@@ -41,7 +41,7 @@ namespace eServeSU
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    //throw new Exception(e.Message);
                 }
 
             }
@@ -61,7 +61,7 @@ namespace eServeSU
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    //throw new Exception(e.Message);
                 }
 
             }
@@ -82,7 +82,7 @@ namespace eServeSU
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    //throw new Exception(e.Message);
                 }
 
             }
@@ -103,7 +103,7 @@ namespace eServeSU
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    //throw new Exception(e.Message);
                 }
 
             }
@@ -123,7 +123,7 @@ namespace eServeSU
                 }
                 catch (Exception e)
                 {
-                    throw new Exception(e.Message);
+                    //throw new Exception(e.Message);
                 }
 
             }

@@ -101,7 +101,7 @@ namespace eServeSU
             CommunityPartnersPeople ccp = new CommunityPartnersPeople();
 
             ddlSupervisor.DataSource = ccp.GetAllCommunityPartnerPeople();
-            ddlSupervisor.DataTextField = "Supervisor";
+            ddlSupervisor.DataTextField = "FirstName";
             ddlSupervisor.DataValueField = "CPPID";
             ddlSupervisor.DataBind();
         }
@@ -151,9 +151,16 @@ namespace eServeSU
             opp.CrcRequiredByPartner = rblCRC.SelectedValue;
             opp.DistanceFromSU = tbDistance.Text;
             opp.LinkToOnlineApp = tbLink.Text;
-            opp.OrientationDate = Convert.ToDateTime(tbDate.Text);
-            opp.TotalNumberSlots = Convert.ToInt32(tbSlot.Text);
-            opp.TimeCommittment = ddlTimeCommitment.SelectedItem.Value;
+            try
+            {
+                opp.OrientationDate = Convert.ToDateTime(tbDate.Text);           
+                opp.TotalNumberSlots = Convert.ToInt32(tbSlot.Text);
+                opp.TimeCommittment = ddlTimeCommitment.SelectedItem.Value;
+            }
+            catch
+            {
+
+            }
 
             if (Session["OppId"] != null && Session["IsClone"] == null)
             {

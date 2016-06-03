@@ -11,30 +11,39 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace eServeUnitTest
 {
     [TestClass]
-    public class AdminUnitTest
+    public class ProcedureUnitTestNULL
     {
         public TestContext TestContext { get; set; }
         public string ConnectionString = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
 
         [TestMethod]
-        [TestCategory("Admin")]
-        [Description("")]
-        public void Test_GetAllOpportunity()
+        public void Test_VerifyUserNull()
         {
             //Initialize SqlQueryHelper object
             var sqlConnection = new SqlConnection(ConnectionString);
             sqlConnection.Open();
 
-            var command = new SqlCommand("select count(*) from opportunity_section where OpportunityID = 10",sqlConnection);
-            var csCount = Convert.ToInt32(command.ExecuteScalar());
+            var roleID = 0;
+            Int32 roleNum = role();
 
-            //Opportunity
+            Assert.AreEqual(roleID, roleNum);
+        }
 
-            CourseSection cs = new CourseSection();
 
-            List<CourseSection> csList = cs.GetAssignedCourseSection(10);
+        public int role()
+        {
+            DatabaseHelper dbHelper = new DatabaseHelper();
+            dbHelper.DbConnection = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
 
-            Assert.AreEqual(csCount, csList.Count);
+            var reader = dbHelper.VerifyUser(Constant.sp_VerifyUser, "", "");
+            int num = 0;
+            while (reader.Read())
+            {
+                num = Convert.ToInt32(reader["RoleID"]);
+
+            }
+
+            return num;
         }
     }
 }

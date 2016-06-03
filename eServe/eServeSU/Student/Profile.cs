@@ -77,16 +77,22 @@ namespace eServeSU
 
             Profile profile = new Profile();
             reader.Read();
-            profile.StudentID = reader["StudentID"].ToString();
-            profile.FirstName = reader["FirstName"].ToString();
-            profile.LastName = reader["LastName"].ToString();
-            profile.PreferedName = reader["PreferedName"].ToString();
-            profile.DateOfBirth = reader["DateOfBirth"].ToString();
-            profile.Gender = reader["Gender"].ToString();
-            profile.InternationalStudent = reader["InternationalStudent"].ToString();
-            profile.LastBackgroundCheck = reader["LastBackgroundCheck"].ToString();
-            profile.Ethinicity = GetProfileEthnicity(studentId);
-            profile.FocusAreas = GetProfileFocusAreas(studentId);
+            try
+            {
+                profile.StudentID = reader["StudentID"].ToString();
+                profile.FirstName = reader["FirstName"].ToString();
+                profile.LastName = reader["LastName"].ToString();
+                profile.PreferedName = reader["PreferedName"].ToString();
+                profile.DateOfBirth = reader["DateOfBirth"].ToString();
+                profile.Gender = reader["Gender"].ToString();
+                profile.InternationalStudent = reader["InternationalStudent"].ToString();
+                profile.LastBackgroundCheck = reader["LastBackgroundCheck"].ToString();
+                profile.Ethinicity = GetProfileEthnicity(studentId);
+                profile.FocusAreas = GetProfileFocusAreas(studentId);
+            }
+            catch (InvalidOperationException)
+            {
+            }
 
             return profile;
         }

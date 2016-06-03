@@ -8,33 +8,30 @@ using System.Threading.Tasks;
 using eServeSU;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace eServeUnitTest
+namespace eServeSU.Tests
 {
     [TestClass]
-    public class AdminUnitTest
+    public class RoleUnitTest
     {
+
         public TestContext TestContext { get; set; }
         public string ConnectionString = ConfigurationManager.ConnectionStrings["eServeConnection"].ConnectionString;
 
         [TestMethod]
-        [TestCategory("Admin")]
-        [Description("")]
-        public void Test_GetAllOpportunity()
+        public void TestRoleTable()
         {
+
             //Initialize SqlQueryHelper object
             var sqlConnection = new SqlConnection(ConnectionString);
             sqlConnection.Open();
 
-            var command = new SqlCommand("select count(*) from opportunity_section where OpportunityID = 10",sqlConnection);
-            var csCount = Convert.ToInt32(command.ExecuteScalar());
+            //Make sure there are 4 roles
 
-            //Opportunity
+            var command = new SqlCommand("select count(*) from Role", sqlConnection);
+            var roleCount = Convert.ToInt32(command.ExecuteScalar());
+            int test = 4;
 
-            CourseSection cs = new CourseSection();
-
-            List<CourseSection> csList = cs.GetAssignedCourseSection(10);
-
-            Assert.AreEqual(csCount, csList.Count);
+            Assert.AreEqual(test, roleCount);
         }
     }
 }

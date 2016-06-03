@@ -82,8 +82,8 @@ namespace eServeSU
         public const string sp_GetPartnerEvaluationByStudentIDOppID = "spGetPartnerEvaluationByStudentIDOppID";
         public const string SP_GetOpportunityListForFaculty = "spGetOpportunityListForFaculty";
         public const string sp_GetStudentEvaluationByStudentIDOppID = "spGetStudentEvaluationByStudentIDOppID";
-        
 
+        public const string sp_VerifyUser = "spVerifyUser";
         public enum UserType
         {
             Partner,
